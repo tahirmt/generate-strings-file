@@ -93,10 +93,10 @@ private extension String {
     func extractLocalizableStrings() throws -> [Localizable] {
         let patterns: [NSRegularExpression] = [
             // swift
-            try NSRegularExpression(pattern: "NSLocalizedString\\(\"(.*)\", comment: \"(.*)\"\\)", options: []),
+            try NSRegularExpression(pattern: "NSLocalizedString\\([ \n]*\"(.*)\",[ \n]*comment: \"(.*)\"[ \n]*\\)", options: []),
             // objc
-            try NSRegularExpression(pattern: "NSLocalizedString\\(@\"(.*)\", @\"(.*)\"\\)", options: []),
-            try NSRegularExpression(pattern: "NSLocalizedString\\(@\"(.*)\", nil\\)", options: []),
+            try NSRegularExpression(pattern: "NSLocalizedString\\([ \n]*@\"(.*)\",[ \n]*@\"(.*)\"[ \n]*\\)", options: []),
+            try NSRegularExpression(pattern: "NSLocalizedString\\([ \n]*@\"(.*)\",[ \n]*nil[ \n]*\\)", options: []),
         ]
 
         let matches: [NSTextCheckingResult] = patterns.flatMap { pattern in

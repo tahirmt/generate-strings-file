@@ -1,0 +1,3 @@
+default:
+	swift build -c release --build-path .build --arch arm64 --arch x86_64 --disable-sandbox
+	cp .build/apple/Products/Release/generate-strings-file ./

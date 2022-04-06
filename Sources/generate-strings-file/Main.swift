@@ -14,6 +14,7 @@ struct Main: ParsableCommand {
         subcommands: [
             Generate.self,
             Merge.self,
+            Lint.self,
         ],
         defaultSubcommand: Generate.self
     )

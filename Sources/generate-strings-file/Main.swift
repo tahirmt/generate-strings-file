@@ -16,6 +16,7 @@ struct Main: ParsableCommand {
             Merge.self,
             Lint.self,
             Replace.self,
+            Sort.self
         ],
         defaultSubcommand: Generate.self
     )
